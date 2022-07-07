@@ -16,11 +16,11 @@ function App(props) {
   return (
     <Router>
       <div className="App">
-        <Link to="/">Home</Link> <br/>
+        <Link to="/food-ordering-app">Home</Link> <br/>
         <Link to="/menu">Menu Card</Link> <br/>
         <Link to="/order-details">Order Details</Link> <br/>
         <Routes>
-          <Route path="/" element={<HomePage {...props} />} />
+          <Route path="/food-ordering-app" element={<HomePage {...props} />} />
           <Route path="/menu" element={<MenuDetails {...props} />} />
           <Route path="/order-details" element={<OrderDetails {...props} />} />
         </Routes>
