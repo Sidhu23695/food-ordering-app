@@ -1,15 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
+import './App.css';
+import OrderDetails from './components/OrderDetails/OrderDetails';
+import MenuDetails from './components/MenuDetails/MenuDetails';
+
+function App(props) {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Coming Soon - Food App 
-        </p>
-      </header>
+      <p>
+        Coming Soon - Food Apps
+      </p>
+      <OrderDetails {...props} />
+      <MenuDetails />
     </div>
   );
 }
