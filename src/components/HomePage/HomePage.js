@@ -4,17 +4,14 @@ import {
   increaseCounter,
   decreaseCounter,
 } from "../../Actions/index";
-import './OrderDetails.scss';
+import './HomePage.scss';
 
-function OrderDetails(props) {
-  const { orderDetails } = props;
+function HomePage(props) {
 
   return (
-    <div className="OrderDetails">
-      <p className="test">Your Current OrderDetails: </p>
-      {orderDetails.map((menu, i) => 
-            <p key={i}>{menu.ITEMNAME}</p>
-        )}
+    <div className="HomePage">
+      <p className="test">Welcome to Z-Hotel</p>
+      <p>Please order the food or See the order using the above link</p>
     </div>
   );
 }
@@ -22,7 +19,6 @@ function OrderDetails(props) {
 const mapStateToProps = state => {
   return {
     count: state.details.count,
-    orderDetails: state.details.orderDetails
   }
 }
 
@@ -33,4 +29,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(OrderDetails)
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage)

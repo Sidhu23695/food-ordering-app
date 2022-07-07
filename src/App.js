@@ -1,19 +1,31 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
-import './App.css';
 import OrderDetails from './components/OrderDetails/OrderDetails';
 import MenuDetails from './components/MenuDetails/MenuDetails';
+import HomePage from './components/HomePage/HomePage';
+import './App.css';
 
 function App(props) {
 
   return (
-    <div className="App">
-      <p>
-        Coming Soon - Food Apps
-      </p>
-      <OrderDetails {...props} />
-      <MenuDetails />
-    </div>
+    <Router>
+      <div className="App">
+        <Link to="/">Home</Link> <br/>
+        <Link to="/menu">Menu Card</Link> <br/>
+        <Link to="/order-details">Order Details</Link> <br/>
+        <Routes>
+          <Route path="/" element={<HomePage {...props} />} />
+          <Route path="/menu" element={<MenuDetails {...props} />} />
+          <Route path="/order-details" element={<OrderDetails {...props} />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
