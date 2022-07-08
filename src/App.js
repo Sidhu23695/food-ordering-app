@@ -2,7 +2,8 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+  Navigate
 } from "react-router-dom";
 
 import OrderDetails from './components/OrderDetails/OrderDetails';
@@ -24,6 +25,7 @@ function App(props) {
           <Route path="/menu" element={<MenuDetails {...props} />} />
           <Route path="/cart" element={<MenuDetails {...props} isCart={true} />} />
           <Route path="/order-details" element={<OrderDetails {...props} />} />
+          <Route path="*" element={<Navigate to="/food-ordering-app" />} />
         </Routes>
         <Footer />
       </div>
