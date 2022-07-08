@@ -34,6 +34,26 @@ const INITIAL_STATE = {
             ORDER_DATE: '1-1-2021',
             ORDER_TIME: '2:30 PM'
         }
+    ],
+    linkDetails: [
+        {
+          id: 1,
+          link: '/food-ordering-app',
+          title: 'Home',
+          variant: 'primary'
+        },
+        {
+          id: 2,
+          link: '/menu',
+          title: 'Menu Card',
+          variant: 'success'
+        },
+        {
+          id: 3,
+          link: '/order-details',
+          title: 'Order Details',
+          variant: 'warning'
+        }
     ]
 };
 

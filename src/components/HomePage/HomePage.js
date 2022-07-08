@@ -10,8 +10,16 @@ function HomePage(props) {
 
   return (
     <div className="HomePage">
-      <p className="test">Welcome to Z-Hotel</p>
-      <p>Please order the food or See the order using the above link</p>
+      <div className="row">
+        <div className="leftcolumn">
+          <div className="card">
+            <div className="fakeimg" style={{height: '850px', backgroundSize: 'cover'}}>
+              <h2>Z-Hotel Presenting Buffet</h2>
+              <h5>Unlimited Banquet @599, July 13, 2022</h5>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
