@@ -22,6 +22,7 @@ function App(props) {
         <Routes>
           <Route path="/food-ordering-app" element={<HomePage {...props} />} />
           <Route path="/menu" element={<MenuDetails {...props} />} />
+          <Route path="/cart" element={<MenuDetails {...props} isCart={true} />} />
           <Route path="/order-details" element={<OrderDetails {...props} />} />
         </Routes>
         <Footer />

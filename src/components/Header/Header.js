@@ -16,7 +16,7 @@ function Header(props) {
             </div>
             <div className="topnav">
                 {linkDetails.map((linkVal, i) => {
-                    return <Link to={linkVal.link}><span className={classNames(linkVal.link)} >{linkVal.title}</span></Link>
+                    return <Link key={i} to={linkVal.link}><span className={classNames(linkVal.link)} >{linkVal.title}</span></Link>
                 })}
             </div>
         </>

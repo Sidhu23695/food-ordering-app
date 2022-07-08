@@ -1,28 +1,61 @@
-import { INCREMENT, DECREMENT } from '../Redux/constants';
+import { UPDATE_CART, EMPTY_CART } from '../Redux/constants';
 
 const INITIAL_STATE = {
-    count: 0,
+    cartDetails: [],
     menuDetails: [
         {
+            id: 1,
             NAME: 'Dosa',
             TYPE: 'Veg',
             CUISINE: 'South Indian',
             AVAILABILITY: ['BREAKFAST','LUNCH'],
-            PRICE: 50
+            PRICE: 50,
+            COUNT: 0
         },
         {
+            id: 2,
             NAME: 'Chappathi',
             TYPE: 'Veg',
             CUISINE: 'North Indian',
             AVAILABILITY: ['BREAKFAST','LUNCH'],
-            PRICE: 40
+            PRICE: 40,
+            COUNT: 0
         },
         {
+            id: 3,
             NAME: 'Chicken',
             TYPE: 'Non-Veg',
             CUISINE: 'South Indian',
             AVAILABILITY: ['BREAKFAST','LUNCH','DINNER'],
-            PRICE: 100
+            PRICE: 100,
+            COUNT: 0
+        },
+        {
+            id: 4,
+            NAME: 'Mutton',
+            TYPE: 'Non-Veg',
+            CUISINE: 'South Indian',
+            AVAILABILITY: ['LUNCH'],
+            PRICE: 180,
+            COUNT: 0
+        },
+        {
+            id: 5,
+            NAME: 'Fish',
+            TYPE: 'Non-Veg',
+            CUISINE: 'South Indian',
+            AVAILABILITY: ['DINNER'],
+            PRICE: 120,
+            COUNT: 0
+        },
+        {
+            id: 6,
+            NAME: 'Cauliflower',
+            TYPE: 'Veg',
+            CUISINE: 'South Indian',
+            AVAILABILITY: ['DINNER'],
+            PRICE: 80,
+            COUNT: 0
         }
     ],
     orderDetails: [
@@ -40,34 +73,48 @@ const INITIAL_STATE = {
           id: 1,
           link: '/food-ordering-app',
           title: 'Home',
-          variant: 'primary'
         },
         {
           id: 2,
           link: '/menu',
           title: 'Menu Card',
-          variant: 'success'
         },
         {
           id: 3,
           link: '/order-details',
           title: 'Order Details',
-          variant: 'warning'
-        }
+        },
+        {
+            id: 4,
+            link: '/cart',
+            title: 'Cart Details',
+          }
     ]
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case INCREMENT:
+        case UPDATE_CART:
+            let cart = JSON.parse(JSON.stringify(action.payload));
+            cart = cart.filter(menu => menu.COUNT > 0);
             return {
-                ...state, count: state.count + 1,
+                ...state, 
+                cartDetails: cart,
+                menuDetails: action.payload,
             };
 
-        case DECREMENT:
+        case EMPTY_CART:
+            let updatedMenu = JSON.parse(JSON.stringify(action.payload));
+            updatedMenu = updatedMenu.map(menu => {
+                menu.COUNT = 0;
+                return menu;
+            });
             return {
-                ...state, count: state.count - 1,
+                ...state, 
+                cartDetails: [],
+                menuDetails: updatedMenu,
             };
+
             default: return state;
     }
 };

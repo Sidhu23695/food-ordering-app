@@ -1,13 +1,14 @@
-import { INCREMENT, DECREMENT } from '../Redux/constants';
+import { UPDATE_CART, EMPTY_CART } from '../Redux/constants';
 
-export const increaseCounter = () => {
+export const updateCartDetails = (payload) => {
     return {
-        type: INCREMENT,
+        type: UPDATE_CART,
+        payload,
     };
 };
-
-export const decreaseCounter = () => {
+export const emptyCartDetails = (payload) => {
     return {
-        type: DECREMENT,
+        type: EMPTY_CART,
+        payload,
     };
 };

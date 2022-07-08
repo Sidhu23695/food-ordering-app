@@ -4,7 +4,7 @@ import './Footer.scss';
 
 function Footer(props) {
     return (
-        <div class="footer">
+        <div className="footer">
             <h2>Thank you for ordering!!</h2>
             <p>Use the offer and Save the Money copyrights@2022</p>
         </div>
