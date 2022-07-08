@@ -50,7 +50,7 @@ function OrderDetails(props) {
                         <span className="filterGroup">
                             <b>Filter:</b>&nbsp;
                             <select className="selectStyle" onChange={(e) => filterByVegan(e)}>
-                                <option>Select</option>
+                                {!veganSort ? <option>Select</option> : '' }
                                 <option value="Veg" selected={veganSort === 'Veg'}>Veg</option>
                                 <option value="Non-Veg" selected={veganSort === 'Non-Veg'}>Non-Veg</option>
                             </select>
