@@ -70,14 +70,14 @@ const INITIAL_STATE = {
     ],
     linkDetails: [
         {
-          id: 1,
-          link: '/food-ordering-app',
-          title: 'Home',
+            id: 1,
+            link: '/food-ordering-app',
+            title: 'Home',
         },
         {
-          id: 2,
-          link: '/menu',
-          title: 'Menu Card',
+            id: 2,
+            link: '/menu',
+            title: 'Menu Card',
         },
         {
             id: 3,
@@ -104,15 +104,17 @@ const reducer = (state = INITIAL_STATE, action) => {
             };
 
         case EMPTY_CART:
-            let updatedMenu = JSON.parse(JSON.stringify(action.payload));
+            let updatedMenu = JSON.parse(JSON.stringify(action.payload.menuDetails));
             updatedMenu = updatedMenu.map(menu => {
                 menu.COUNT = 0;
                 return menu;
             });
+            const orderDetails = state.orderDetails.concat(action.payload.orderDetails);
             return {
                 ...state, 
                 cartDetails: [],
                 menuDetails: updatedMenu,
+                orderDetails,
             };
 
             default: return state;

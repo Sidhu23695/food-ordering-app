@@ -1,5 +1,60 @@
-$bgColor: red;
+.OrderDetails {
+    .card {
+        background-color: white;
+        padding: 20px;
+        margin-top: 20px;
+        width: 20% !important;
+        margin-top: 20px;
+        margin-right: 65px;
+    }
+    .fullCard {
+        width: 100% !important;
+        margin-right: 10px;
+    }
 
-.OrderDetails .test {
-    color: $bgColor;
+    .fakeimg {
+        background-color: #aaa;
+        background-image: url('https://www.shopvy.in/manage/uploads/cp_categorise/20191120181037-2019-11-20cp_categorise181030.png');
+        width: 100%;
+        padding: 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+        .card {   
+            width: 100% !important;
+            padding: 20px;
+            margin-right: 0px;
+        }
+    }
+
+    .leftcolumn {   
+        float: left;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        padding-right: 5px;
+        flex-wrap: wrap;
+    }
+
+    .placeOrderButton {
+        background-color: #4cbb59;
+        border-radius: 20px;
+        height: 50px;
+        width: 150px;
+    }
+
+    .filterGroup {
+        padding-right: 25px;
+    }
+
+    .filterDiv {
+        padding: 20px;
+        background-color: white;
+        width: 99.5%;
+    }
+
+    .selectStyle {
+        width: 300px;
+        height: 30px;
+    }
 }

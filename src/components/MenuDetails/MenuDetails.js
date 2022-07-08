@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import {
     updateCartDetails,
@@ -7,6 +8,8 @@ import {
 import './MenuDetails.scss';
 
 function MenuDetails(props) {
+
+    const navigate = useNavigate();
 
     const { menuDetails, isCart } = props;
 
@@ -66,8 +69,39 @@ function MenuDetails(props) {
         }
     }
 
+    const getDateAndTime = (isDate) => {
+        const today = new Date();
+        const date = today.getDate() + '-' + (today.getMonth() +1 ) + '-' + today.getFullYear();
+        let hours = today.getHours();
+        let minutes = today.getMinutes();
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        const time = hours + ':' + minutes + ' ' + ampm;
+        return isDate ? date : time;
+    }
+
     const placeOrder = () => {
-        props.emptyCartDetails(menuDetails);
+        const selectedMenuDetails = menuDetails.filter(menu => menu.COUNT > 0);
+        const orderDetails = selectedMenuDetails.map((order, i) => {
+            const obj = {
+                ITEMNAME: order.NAME,
+                TYPE: order.TYPE,
+                CUISINE: order.CUISINE,
+                PRICE: order.PRICE,
+                ORDER_DATE: getDateAndTime(true),
+                ORDER_TIME: getDateAndTime(false),
+            }
+            return obj;
+        })
+        console.log('orderDetails', orderDetails);
+        const returnVal = {
+            menuDetails,
+            orderDetails
+        }
+        props.emptyCartDetails(returnVal);
+        navigate("/order-details");
     }
 
     return (
