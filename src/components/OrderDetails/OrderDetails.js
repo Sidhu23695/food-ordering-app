@@ -46,6 +46,7 @@ function OrderDetails(props) {
                             <b>Search:</b>&nbsp; 
                             <input type="text" />
                         </span>
+                        <div className="hideForMobile"><br/></div>
                         <span className="filterGroup">
                             <b>Filter:</b>&nbsp;
                             <select className="selectStyle" onChange={(e) => filterByVegan(e)}>
@@ -54,6 +55,7 @@ function OrderDetails(props) {
                                 <option value="Non-Veg" selected={veganSort === 'Non-Veg'}>Non-Veg</option>
                             </select>
                         </span>
+                        <div className="hideForMobile"><br/></div>
                         <span className="filterGroup">
                             <b>Sort:</b>&nbsp;
                             <input type="text" />

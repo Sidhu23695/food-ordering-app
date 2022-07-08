@@ -27,6 +27,12 @@
         }
     }
 
+    @media screen and (min-width: 600px) {
+        .hideForMobile {
+            display: none;
+        }
+    }
+
     .leftcolumn {   
         float: left;
         width: 100%;
@@ -54,7 +60,7 @@
     }
 
     .selectStyle {
-        width: 300px;
+        width: 240px;
         height: 30px;
     }
 }
