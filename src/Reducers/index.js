@@ -80,15 +80,15 @@ const INITIAL_STATE = {
           title: 'Menu Card',
         },
         {
-          id: 3,
+            id: 3,
+            link: '/cart',
+            title: 'Cart Details',
+        },
+        {
+          id: 4,
           link: '/order-details',
           title: 'Order Details',
         },
-        {
-            id: 4,
-            link: '/cart',
-            title: 'Cart Details',
-          }
     ]
 };
 

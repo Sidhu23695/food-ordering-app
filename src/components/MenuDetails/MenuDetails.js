@@ -87,6 +87,7 @@ function MenuDetails(props) {
                 </div>
                 {isPlaceOrderButton() 
                 ? <div>
+                    <br/>
                     <center>
                         <button className="placeOrderButton" onClick={() => placeOrder()}>Place Order</button>
                     </center>
