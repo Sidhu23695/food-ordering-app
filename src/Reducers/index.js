@@ -64,7 +64,15 @@ const INITIAL_STATE = {
             TYPE: 'Veg',
             CUISINE: 'South Indian',
             PRICE: 50,
-            ORDER_DATE: '1-1-2021',
+            ORDER_DATE: '2022-7-1',
+            ORDER_TIME: '2:30 PM'
+        },
+        {
+            ITEMNAME: 'Fish',
+            TYPE: 'Non-Veg',
+            CUISINE: 'South Indian',
+            PRICE: 120,
+            ORDER_DATE: '2022-7-11',
             ORDER_TIME: '2:30 PM'
         }
     ],

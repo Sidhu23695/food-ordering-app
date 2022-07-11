@@ -6,7 +6,6 @@ import './Header.scss';
 function Header(props) {
     const location  = useLocation();
     const { linkDetails } = props;
-    console.log('location.pathname', location.pathname);
     const classNames = (linkVal) =>  location.pathname === linkVal ? 'highlighted' : '';
 
     return (
