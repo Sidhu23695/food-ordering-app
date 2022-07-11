@@ -37,9 +37,18 @@
     }
 
     .placeOrderButton {
-        background-color: #4cbb59;
-        border-radius: 20px;
+        background-color: #00720d;
+        color: white;
+        height: 35px;
+        width: 105px;
+    }
+
+    .addToCartButton {
+        background-color: #37434d;
+        color: white;
         height: 50px;
-        width: 150px;
+        width: 100px;
+        padding: 20px;
+        padding: 7px;
     }
 }

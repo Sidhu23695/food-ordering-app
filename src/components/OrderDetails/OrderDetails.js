@@ -104,7 +104,8 @@ function OrderDetails(props) {
                     {orderDatas.length === 0 
                     ? <div className="card fullCard">
                         <center>
-                            <h2>Cart is Empty!!</h2>
+                            <h2>Orders not found!!</h2>
+                            <p>Please order and enjoy your day..</p>
                         </center>
                         <br/><br/><br/><br/><br/><br/><br/><br/><br/>
                     </div>

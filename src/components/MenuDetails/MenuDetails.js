@@ -24,8 +24,8 @@ function MenuDetails(props) {
         props.updateCartDetails(menus);
     }
 
-  const Card = (menu, isEmptyCard, index) => {
-    return (
+    const Card = (menu, isEmptyCard, index) => {
+        return (
         !isEmptyCard 
             ? <div key={index} className="card">
                 <h2>{menu.NAME}</h2>
@@ -43,10 +43,15 @@ function MenuDetails(props) {
                 <p>
                     <b>Price: ₹</b>{menu.PRICE}
                 </p>
-                <center>
-                    <button onClick={() => updateCart(menu.id, false)}>-</button> &nbsp; {menu.COUNT} &nbsp;
-                    <button onClick={() => updateCart(menu.id, true)}>+</button>
-                </center>
+                <p style={{textAlign: 'right'}}>
+                {menu.COUNT > 0
+                    ? <center>
+                        <button onClick={() => updateCart(menu.id, false)}>-</button> &nbsp; {menu.COUNT} &nbsp;
+                        <button onClick={() => updateCart(menu.id, true)}>+</button>
+                    </center>
+                    : <p style={{textAlign: 'right'}}><button className="addToCartButton" onClick={() => updateCart(menu.id, true)}>Add to Cart</button></p>
+                }
+                </p>
             </div> 
             : <div className="card fullCard">
                 <center>
@@ -60,6 +65,12 @@ function MenuDetails(props) {
     const isCartEmpty = () => {
         if (isCart) {
             return !menuDetails.some(menu => menu.COUNT > 0);
+        }
+    }
+
+    const addToCart = () => {
+        if (!isCart) {
+            return menuDetails.some(menu => menu.COUNT > 0);
         }
     }
 
