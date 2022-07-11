@@ -65,7 +65,8 @@ const INITIAL_STATE = {
             CUISINE: 'South Indian',
             PRICE: 50,
             ORDER_DATE: '2022-7-1',
-            ORDER_TIME: '2:30 PM'
+            ORDER_TIME: '2:30 PM',
+            COUNT: 3
         },
         {
             ITEMNAME: 'Fish',
@@ -73,7 +74,8 @@ const INITIAL_STATE = {
             CUISINE: 'South Indian',
             PRICE: 120,
             ORDER_DATE: '2022-7-11',
-            ORDER_TIME: '2:30 PM'
+            ORDER_TIME: '2:30 PM',
+            COUNT: 1
         }
     ],
     linkDetails: [

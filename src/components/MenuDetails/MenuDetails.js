@@ -90,6 +90,7 @@ function MenuDetails(props) {
                 TYPE: order.TYPE,
                 CUISINE: order.CUISINE,
                 PRICE: order.PRICE,
+                COUNT: order.COUNT,
                 ORDER_DATE: getDateAndTime(true),
                 ORDER_TIME: getDateAndTime(false),
             }

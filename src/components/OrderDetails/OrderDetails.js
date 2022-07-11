@@ -62,6 +62,9 @@ function OrderDetails(props) {
                 <p>
                     <b>Price: ₹</b>{order.PRICE}
                 </p>
+                <p>
+                    <b>Quantity: </b>{order.COUNT}
+                </p>
             </div>
         )
     };
