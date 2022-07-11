@@ -1,12 +1,8 @@
 import { connect } from "react-redux";
 
-// import {
-//   increaseCounter,
-//   decreaseCounter,
-// } from "../../Actions/index";
 import './HomePage.scss';
 
-function HomePage(props) {
+function HomePage() {
 
     return (
         <div className="HomePage">
@@ -30,11 +26,4 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    // increaseCounter: () => dispatch(increaseCounter()),
-    // decreaseCounter: () => dispatch(decreaseCounter()),
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage)
+export default connect(mapStateToProps, null)(HomePage)

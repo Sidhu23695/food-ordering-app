@@ -71,7 +71,7 @@ function MenuDetails(props) {
 
     const getDateAndTime = (isDate) => {
         const today = new Date();
-        const date = today.getDate() + '-' + (today.getMonth() +1 ) + '-' + today.getFullYear();
+        const date = today.getFullYear() + '-' + (today.getMonth() +1 ) + '-' + today.getDate();
         let hours = today.getHours();
         let minutes = today.getMinutes();
         const ampm = hours >= 12 ? 'PM' : 'AM';
@@ -95,7 +95,6 @@ function MenuDetails(props) {
             }
             return obj;
         })
-        console.log('orderDetails', orderDetails);
         const returnVal = {
             menuDetails,
             orderDetails

@@ -9,6 +9,12 @@ function OrderDetails(props) {
     const [veganFilter, updateVeganFilter] = useState('All');
     const [dateSort, updateDateSort] = useState(true);
     const [searchOrder, updateSearchOrder] = useState(null);
+    const arrowDirection = dateSort ? 'up' : 'down';
+    const arrowClass = `arrow ${arrowDirection}`;
+
+    const mergeDateTime = (order) => {
+        return order.ORDER_DATE + ' ' + order.ORDER_TIME;
+    }
 
     const filterAppliedForDatas = () => {
         const currentDate = new Date();
@@ -29,16 +35,13 @@ function OrderDetails(props) {
         if (searchOrder) {
             orderDatas = orderDatas.filter(item => item.ITEMNAME.toLowerCase().includes(searchOrder.toLowerCase()));
         }
-        orderDatas.sort((orderOne, orderTwo) => !dateSort ? new Date(orderOne.ORDER_DATE) - new Date(orderTwo.ORDER_DATE) : new Date(orderTwo.ORDER_DATE) - new Date(orderOne.ORDER_DATE));
+        orderDatas.sort((orderOne, orderTwo) => !dateSort ? new Date(mergeDateTime(orderOne)) - new Date(mergeDateTime(orderTwo)) : new Date(mergeDateTime(orderTwo)) - new Date(mergeDateTime(orderOne)));
         updateorderDatas(orderDatas);
     };
 
     useEffect(() => {
         filterAppliedForDatas();
      }, [veganFilter, dateSort, searchOrder]);
-
-    const arrowDirection = dateSort ? 'up' : 'down';
-    const arrowClass = `arrow ${arrowDirection}`;
 
     const orderCard = (order, index) => {
         return (
@@ -116,11 +119,4 @@ const mapStateToProps = state => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        // increaseCounter: () => dispatch(increaseCounter()),
-        // decreaseCounter: () => dispatch(decreaseCounter()),
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(OrderDetails)
+export default connect(mapStateToProps, null)(OrderDetails)
