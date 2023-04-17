@@ -6,7 +6,7 @@ function Footer(props) {
     return (
         <div className="footer">
             <h2>Thank you for ordering!!</h2>
-            <p>Use the offer and Save the Money copyrights@2022</p>
+            <p>Use the offer and Save the Money copyrights@2022s</p>
         </div>
     )
 };
